@@ -1,7 +1,7 @@
 export PYTHON = pypy
 export CC  = gcc
 export CXX = g++
-export CFLAGS = -std=c++11 -Wall -O3 -msse2  -fopenmp  -I..
+export CFLAGS = -std=c++11 -Wall -O3 -msse2 -I..
 
 BIN = ./bin/MACFP ./bin/TDP
 .PHONY: clean all
@@ -14,7 +14,7 @@ all: ./bin $(BIN)
 ./bin:
 	mkdir bin
 
-export LDFLAGS= -pthread -lm -Wno-unused-result -Wno-sign-compare -Wno-unused-variable -Wno-parentheses -Wno-format
+export LDFLAGS= -lm -Wno-unused-result -Wno-sign-compare -Wno-unused-variable -Wno-parentheses -Wno-format
 
 $(BIN) :
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(filter %.cpp %.o %.c, $^)
