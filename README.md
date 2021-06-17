@@ -7,6 +7,9 @@
 
 * g++
 
+
+When using the clang compiler from XCode on mac, you may see some error like `libc++abi.dylib: terminating with uncaught exception of type std::bad_alloc: std::bad_alloc`. The error will go away just by using the GNU G++ (I have recently tested using `g++-10`).
+
 ## Build
 
 MACFP can be easily built by Makefile in the terminal.
